@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+body {
+    background: asset_url('background.png') repeat-x center top fixed;
+    
+    .navbar {
+        background-color: rgba(255, 255, 255, 0.75);
+        .nav-logo {
+            height: 3rem;
+        }
+    } 
+
+}
