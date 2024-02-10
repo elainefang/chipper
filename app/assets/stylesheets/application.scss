@@ -15,9 +15,10 @@
  */
 body {
     background: asset_url('background.png') repeat-x center top fixed;
-    
+
     .navbar {
-        background-color: rgba(255, 255, 255, 0.75);
+        background-color: rgba(4, 59, 92, 0.5);
+        .nav-link { color: white;}
         .nav-logo {
             height: 3rem;
         }
