@@ -68,3 +68,4 @@ end
 
 gem "devise"
 gem "sassc-rails"
+gem "aws-sdk-s3"
