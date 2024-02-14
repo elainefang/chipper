@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
 
   has_many :posts, dependent: :destroy
+  validates_presence_of :email
+  validates_presence_of :encrypted_password
+  validates_presence_of :first_name
+  validates_presence_of :last_name
+  validates_presence_of :age_over_thirteen
 end
