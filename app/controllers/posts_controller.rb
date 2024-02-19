@@ -1,6 +1,6 @@
 class PostsController < ActionController::Base
     layout 'application'
-    before_action :load_user
+    before_action :load_user, except: [:index, :show]
 
     def index; end
 
