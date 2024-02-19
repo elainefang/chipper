@@ -35,8 +35,10 @@
           </ul>
         </li>
       </ul>
-      <%= link_to '#' do %>
-        <%= image_tag "edit-icon", alt: "edit-button" %>
+      <% if user_signed_in? %>
+        <%= link_to new_post_path do %>
+          <%= image_tag "edit-icon", alt: "edit-button" %>
+        <% end %>
       <% end %>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
