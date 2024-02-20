@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users do
-    resources :posts
-  end
-  
-  resources :posts do
-    resources :comments
+  devise_for :users
+
+  resources :accounts, path: :users, only: [:show] do
+    resources :posts, shallow: true do
+      resources :comments
+    end
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
