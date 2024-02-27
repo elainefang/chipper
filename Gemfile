@@ -68,6 +68,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "devise"
-gem "sassc-rails"
 gem "aws-sdk-s3"
+gem "devise"
+gem "image_processing", ">= 1.2"
+gem "sassc-rails"
