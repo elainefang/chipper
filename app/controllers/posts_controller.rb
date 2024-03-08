@@ -1,24 +1,24 @@
 class PostsController < ActionController::Base
-    layout 'application'
-    before_action :load_user, except: [:index, :show]
+	layout 'application'
+	before_action :load_post, only: [:edit, :update, :show, :destroy]
 
-    def index; end
+	def index; end
 
-    def show; end
+	def show; end
 
-    def new; end
+	def new; end
 
-    def create; end
+	def create; end
 
-    def edit; end
+	def edit; end
 
-    def update; end
+	def update; end
 
-    def destroy; end
+	def destroy; end
 
-    private
+	private
 
-    def load_user
-        @user = User.find(params[:account_id])
-    end
+	def load_post
+		@post = Post.find(params[:id])
+	end
 end
