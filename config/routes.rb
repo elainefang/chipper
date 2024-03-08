@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :accounts, path: :users, only: [:show] do
+  resources :users, only: [:show] do
     resources :posts, shallow: true do
       resources :comments
     end

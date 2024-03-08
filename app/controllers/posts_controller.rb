@@ -6,7 +6,9 @@ class PostsController < ActionController::Base
 
 	def show; end
 
-	def new; end
+	def new
+		@post = Post.new
+	end
 
 	def create; end
 

@@ -36,7 +36,7 @@
         </li>
       </ul>
       <% if user_signed_in? %>
-        <%= link_to new_account_post_path(current_user.id) do %>
+        <%= link_to new_user_post_path(current_user.id) do %>
           <%= image_tag "edit-icon", alt: "edit-icon", class: "edit-icon", title: "Create Post" %>
         <% end %>
       <% end %>
