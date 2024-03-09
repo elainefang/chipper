@@ -10,7 +10,12 @@ class PostsController < ActionController::Base
 		@post = Post.new
 	end
 
-	def create; end
+	def create
+		@post = Post.new(post_params)
+		@post.user = current_user
+		@post.save
+		redirect_to post_path(@post)
+	end
 
 	def edit; end
 
@@ -22,5 +27,9 @@ class PostsController < ActionController::Base
 
 	def load_post
 		@post = Post.find(params[:id])
+	end
+
+	def post_params
+		params.require(:post).permit(:title, :content, :images)
 	end
 end
