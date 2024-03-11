@@ -2,7 +2,9 @@ class PostsController < ActionController::Base
 	layout 'application'
 	before_action :load_post, only: [:edit, :update, :show, :destroy]
 
-	def index; end
+	def index
+		@posts = pagy(Post.all, items: 9)
+	end
 
 	def show; end
 

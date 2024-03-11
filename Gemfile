@@ -71,4 +71,5 @@ end
 
 gem "aws-sdk-s3"
 gem "devise"
+gem "pagy"
 gem "sassc-rails"
