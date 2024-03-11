@@ -1,4 +1,4 @@
-class PostsController < ActionController::Base
+class PostsController < ApplicationController
 	layout 'application'
 	before_action :load_post, only: [:edit, :update, :show, :destroy]
 
