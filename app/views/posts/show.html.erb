@@ -16,4 +16,13 @@
   <% end %>
   <p>By: <%= @post.user.first_name %> <%= @post.user.last_name %></p>
   <p><%= @post.likes %> Likes</p>
+
+  <% if @post.comments.present? %>
+    <% @post.comments.each do |comment| %>
+      <div><%= comment.content %></div>
+    <% end %>
+  <% end %>
+  <% if user_signed_in? %>
+    <%= render 'comment_form' %>
+  <% end %>
 </div>
