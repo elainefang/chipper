@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 	before_action :load_post, only: [:edit, :update, :show, :destroy]
 
 	def index
-		@pagy, @posts = pagy(Post.all, items: 1)
+		@pagy, @posts = pagy(Post.with_comments.all, items: 1)
 	end
 
 	def show; end
