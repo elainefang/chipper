@@ -1,7 +1,9 @@
 <div class="container opaque">
   <h1><%= @post.title %></h1>
   <% if @post.images.attached? %>
-    <%= image_tag url_for(@post.image), class: "img-fluid" %>
+    <% @post.images.each do |image| %>
+      <%= image_tag url_for(image), class: "img-fluid" %>
+    <% end %>
   <% end %>
   <p><%= @post.content %></p>
   <p>Posted: <%= @post.created_at.strftime("%B %-d, %Y at %l:%M%p") %></p>
