@@ -20,6 +20,7 @@
   <% if @post.comments.present? %>
     <% @post.comments.each do |comment| %>
       <div><%= comment.content %></div>
+      <p>By: <%= comment.user.first_name %> <%= comment.user.last_name %></p>
     <% end %>
   <% end %>
   <% if user_signed_in? %>
