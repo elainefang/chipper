@@ -1,8 +1,17 @@
 <div class="container opaque">
   <h1>Posts</h1>
   <% @posts.each do |post| %>
-    <h2><%= post.title %></h2>
-    <p><%= post.content %></p>
+    <% if post.title? %>
+      <h2><%= post.title %></h2>
+    <% end %>
+    <% if post.content? %>
+      <p><%= post.content %></p>
+    <% end %>
+    <% if post.images.attached? %>
+      <% post.images.each do |image| %>
+        <%= image_tag url_for(image), class: "img-fluid">
+      <% end %>
+    <% end %>
   <% end %>
   <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
 </div>

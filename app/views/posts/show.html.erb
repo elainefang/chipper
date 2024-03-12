@@ -1,11 +1,15 @@
 <div class="container opaque">
-  <h1><%= @post.title %></h1>
+  <% if @post.title? %>
+    <h1><%= @post.title %></h1>
+  <% end %>
+  <% if @post.content? %>
+    <p><%= @post.content %></p>
+  <% end %>
   <% if @post.images.attached? %>
     <% @post.images.each do |image| %>
       <%= image_tag url_for(image), class: "img-fluid" %>
     <% end %>
   <% end %>
-  <p><%= @post.content %></p>
   <p>Posted: <%= @post.created_at.strftime("%B %-d, %Y at %l:%M%p") %></p>
   <% if @post.updated_at != @post.created_at %>
     <p>Updated: <%= @post.updated_at.strftime("%B %-d, %Y at %l:%M%p") %></p>

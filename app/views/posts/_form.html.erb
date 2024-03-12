@@ -12,7 +12,7 @@
 
 	<div class="field">
 		<%= f.label :images %><br />
-		<%= f.file_field :images %>
+		<%= f.file_field :images, multiple: true %>
 	</div>
 
   <%= f.submit "Submit", id: "submit" %>
