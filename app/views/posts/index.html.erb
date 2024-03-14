@@ -9,7 +9,7 @@
     <% end %>
     <% if post.images.attached? %>
       <% post.images.each do |image| %>
-        <%= image_tag url_for(image), class: "img-fluid" %>
+        <%= image_tag url_for(image), class: "img-fluid post-image" %>
       <% end %>
     <% end %>
     <%= link_to 'View Post', post_path(post) %>

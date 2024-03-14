@@ -7,7 +7,7 @@
   <% end %>
   <% if @post.images.attached? %>
     <% @post.images.each do |image| %>
-      <%= image_tag url_for(image), class: "img-fluid" %>
+      <%= image_tag url_for(image), class: "img-fluid post-image" %>
     <% end %>
   <% end %>
   <p>Posted: <%= @post.created_at.strftime("%B %-d, %Y at %l:%M%p") %></p>

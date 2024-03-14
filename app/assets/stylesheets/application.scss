@@ -22,5 +22,10 @@ body {
 		border-radius: 10px;
 		margin: 1rem auto;
 		padding: 2rem;
+
+		.post-image {
+			max-height: 1000px;
+			max-width: 1000px;
+		}
 	}
 }
