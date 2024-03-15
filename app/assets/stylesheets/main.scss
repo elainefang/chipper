@@ -1,0 +1,32 @@
+body {
+	background: asset_url('background.png') repeat-x center top fixed;
+
+	.container.opaque {
+		background-color: rgba(255, 255, 255, 0.75);
+		border-radius: 10px;
+		margin: 1rem auto;
+		padding: 2rem;
+
+		.post-image {
+			max-height: 1000px;
+			max-width: 1000px;
+		}
+	}
+
+  .byline {
+    img {
+      border: 2px solid grey;
+      height: 3rem;
+      object-fit: cover;
+      width: 3rem;
+    }
+  }
+
+  .profile {
+    .avatar {
+      margin: 0 auto;
+      max-height: 500px;
+      max-width: 500px;
+    }
+  }
+}

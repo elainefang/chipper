@@ -1,0 +1,4 @@
+<div class="container opaque profile">
+  <h1><%= @user.first_name %> <%= @user.last_name %>'s Profile</h1>
+  <%= image_tag url_for(@user.avatar), class: "avatar" if @user.avatar.attached? %>
+</div>

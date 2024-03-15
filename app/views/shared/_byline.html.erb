@@ -1,0 +1,14 @@
+<div class="byline">
+  <%= image_tag url_for(user.avatar), class: "avatar float-left" if user.avatar.attached? %>
+  
+  <div class="float-right">
+    <%= link_to user_path(user) do %>
+      <%= user.first_name %> <%= user.last_name %>
+    <% end %>
+    <% if updated_at != created_at %>
+      Updated <%= updated_at.strftime("%B %-d, %Y at %l:%M%p") %>
+    <% else %>
+      <%= created_at.strftime("%B %-d, %Y at %l:%M%p") %>
+    <% end %>
+  </div>
+</div>

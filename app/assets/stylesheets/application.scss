@@ -13,19 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-body {
-	background: asset_url('background.png') repeat-x center top fixed;
-
-	.container.opaque {
-		background-color: rgba(255, 255, 255, 0.75);
-		border-radius: 10px;
-		margin: 1rem auto;
-		padding: 2rem;
-
-		.post-image {
-			max-height: 1000px;
-			max-width: 1000px;
-		}
-	}
-}

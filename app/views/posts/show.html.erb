@@ -10,17 +10,13 @@
       <%= image_tag url_for(image), class: "img-fluid post-image" %>
     <% end %>
   <% end %>
-  <p>Posted: <%= @post.created_at.strftime("%B %-d, %Y at %l:%M%p") %></p>
-  <% if @post.updated_at != @post.created_at %>
-    <p>Updated: <%= @post.updated_at.strftime("%B %-d, %Y at %l:%M%p") %></p>
-  <% end %>
-  <p>By: <%= @post.user.first_name %> <%= @post.user.last_name %></p>
+  <%= render "shared/byline", created_at: @post.created_at, updated_at: @post.updated_at, user: @post.user %>
   <p><%= @post.likes %> Likes</p>
 
   <% if @post.comments.present? %>
     <% @post.comments.each do |comment| %>
       <div><%= comment.content %></div>
-      <p>By: <%= comment.user.first_name %> <%= comment.user.last_name %></p>
+      <%= render "shared/byline", created_at: comment.created_at, updated_at: comment.updated_at, user: comment.user %>
     <% end %>
   <% end %>
   <% if user_signed_in? %>
