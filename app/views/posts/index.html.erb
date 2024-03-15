@@ -12,7 +12,10 @@
         <%= image_tag url_for(image), class: "img-fluid post-image" %>
       <% end %>
     <% end %>
-    <%= link_to 'View Post', post_path(post) %>
+    <%= render "shared/byline", created_at: post.created_at, updated_at: post.updated_at, user: post.user %>
+    <div>
+      <%= link_to 'View Post', post_path(post) %>
+    </div>
   <% end %>
   <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
 </div>

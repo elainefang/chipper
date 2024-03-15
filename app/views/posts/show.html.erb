@@ -14,10 +14,14 @@
   <p><%= @post.likes %> Likes</p>
 
   <% if @post.comments.present? %>
-    <% @post.comments.each do |comment| %>
-      <div><%= comment.content %></div>
-      <%= render "shared/byline", created_at: comment.created_at, updated_at: comment.updated_at, user: comment.user %>
-    <% end %>
+    <hr />
+    <h2>Comments</h2>
+    <div class="comments">
+      <% @post.comments.each do |comment| %>
+        <div><%= comment.content %></div>
+        <%= render "shared/byline", created_at: comment.created_at, updated_at: comment.updated_at, user: comment.user %>
+      <% end %>
+    </div>
   <% end %>
   <% if user_signed_in? %>
     <%= render 'comment_form' %>

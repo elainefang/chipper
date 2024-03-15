@@ -13,11 +13,18 @@ body {
 		}
 	}
 
+  .comments {
+    padding-left: 2rem;
+  }
+
   .byline {
+    padding: 1rem 0;
+    
     img {
       border: 2px solid grey;
       height: 3rem;
       object-fit: cover;
+      margin-right: 1rem;
       width: 3rem;
     }
   }

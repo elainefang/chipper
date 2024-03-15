@@ -1,14 +1,20 @@
 <div class="byline">
-  <%= image_tag url_for(user.avatar), class: "avatar float-left" if user.avatar.attached? %>
+  <%= image_tag url_for(user.avatar), class: "avatar float-start" if user.avatar.attached? %>
   
-  <div class="float-right">
+  <div class="poster">
     <%= link_to user_path(user) do %>
-      <%= user.first_name %> <%= user.last_name %>
+      <div>
+        <%= user.first_name %> <%= user.last_name %>
+      </div>
     <% end %>
     <% if updated_at != created_at %>
-      Updated <%= updated_at.strftime("%B %-d, %Y at %l:%M%p") %>
+      <div>
+        Updated <%= updated_at.strftime("%B %-d, %Y at %l:%M%p") %>
+      </div>
     <% else %>
-      <%= created_at.strftime("%B %-d, %Y at %l:%M%p") %>
+      <div>
+        Posted <%= created_at.strftime("%B %-d, %Y at %l:%M%p") %>
+      </div>
     <% end %>
   </div>
 </div>
