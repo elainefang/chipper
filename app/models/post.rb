@@ -12,7 +12,7 @@ class Post < ApplicationRecord
 
     	images.each do |image|
 				unless image.byte_size <= 2.megabyte
-					errors.add(:images, 'too big')
+					errors.add(:images, 'too large')
 				end
 
 				acceptable_types = ["image/jpeg", "image/png"]

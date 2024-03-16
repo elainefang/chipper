@@ -6,17 +6,17 @@ body {
 		border-radius: 10px;
 		margin: 1rem auto;
 		padding: 2rem;
-
-		.post-image {
-			max-height: 1000px;
-			max-width: 1000px;
-		}
 	}
 
   .comments {
     padding-left: 2rem;
   }
-
+  
+  .post {
+    h2 {
+      margin-top: 3rem;
+    }
+  }
   .byline {
     padding: 1rem 0;
     
@@ -32,8 +32,6 @@ body {
   .profile {
     .avatar {
       margin: 0 auto;
-      max-height: 500px;
-      max-width: 500px;
     }
   }
 }

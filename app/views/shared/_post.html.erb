@@ -1,0 +1,13 @@
+<div class="post">
+  <% if post.title? %>
+    <h2><%= post.title %></h2>
+  <% end %>
+  <% if post.content? %>
+    <p><%= post.content %></p>
+  <% end %>
+  <% if post.images.attached? %>
+    <% post.images.each do |image| %>
+      <%= image_tag url_for(image), class: "img-fluid post-image" %>
+    <% end %>
+  <% end %>
+</div>
