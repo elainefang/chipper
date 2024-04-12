@@ -20,5 +20,8 @@ class Post < ApplicationRecord
 					errors.add(:images, "must be a JPEG or PNG")
 				end
 			end
+			unless images.size > 10
+				errors.add(:images, 'too many images')
+			end
     end
 end

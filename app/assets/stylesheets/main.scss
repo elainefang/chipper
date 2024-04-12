@@ -17,7 +17,7 @@ body {
       margin-top: 3rem;
     }
   }
-  .byline {
+  .byline, .follower {
     padding: 1rem 0;
     
     img {
@@ -26,6 +26,14 @@ body {
       object-fit: cover;
       margin-right: 1rem;
       width: 3rem;
+    }
+  }
+  .followers-list {
+    list-style: none;
+    .follower {
+      .follower-name {
+        margin-left: 1rem;
+      }
     }
   }
 

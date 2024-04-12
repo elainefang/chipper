@@ -1,1 +1,2 @@
-<h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+<%= image_tag url_for(current_user.avatar), class: "avatar img-fluid" if current_user.avatar.attached? %>
+<h2 class="text-center"><%= current_user.first_name %> <%= current_user.last_name %></h3>

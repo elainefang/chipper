@@ -16,4 +16,8 @@ class User < ApplicationRecord
   def followers
     Follower.where(user_id: self.id)
   end
+
+  def following?(user)
+    Follower.where(user_id: user.id, follower_id: self.id).exists?
+  end
 end

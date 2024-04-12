@@ -1,9 +1,17 @@
 <h3>Followers</h3>
-<ul>
-  <% user.followers.each do |follower| %>
-    <% follower_user = User.find(follower_id) %>
-    <li>
-      <%= link_to "#{follower_user.first_name} #{follower_user.last_name}", user_path(follower_user) %>
-    </li>
-  <% end %>
-</ul>
+<% if user.followers.empty? %>
+  <p class>No followers yet.</p>
+<% else %>
+  <ul class="followers-list">
+    <% user.followers.each do |follower| %>
+      <% follower_user = User.find(follower.follower_id) %>
+      <li>
+        <div class="follower">
+          <%= image_tag url_for(follower_user.avatar), class: "avatar float-start" if follower_user.avatar.attached? %>
+          <%= link_to "#{follower_user.first_name} #{follower_user.last_name}", user_path(follower_user), class: "follower-name" %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+

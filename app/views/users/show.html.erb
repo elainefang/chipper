@@ -3,6 +3,17 @@
     <div class="col col-md-6">
       <h1><%= @user.first_name %> <%= @user.last_name %>'s Profile</h1>
       <%= image_tag url_for(@user.avatar), class: "avatar img-fluid" if @user.avatar.attached? %>
+      <% if user_signed_in? && current_user != @user %>
+        <% if current_user.following?(@user) %>
+          <%= form_with(url: user_follower_path(user_id: @user.id, id: current_user.id), method: :delete) do |form| %>
+            <%= form.submit 'UnFollow' %>
+          <% end %>
+        <% else %>
+          <%= form_with(url: user_followers_path(@user.id), method: :post) do |form| %>
+            <%= form.submit 'Follow' %>
+          <% end %>
+        <% end %>
+      <% end %>
 
       <% if @posts.present? %>
         <% @posts.each do |post| %>

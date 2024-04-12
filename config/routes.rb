@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :posts, shallow: true do
       resources :comments
     end
+    resources :followers, only: [:create, :destroy]
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
