@@ -1,0 +1,9 @@
+<h3>Followers</h3>
+<ul>
+  <% user.followers.each do |follower| %>
+    <% follower_user = User.find(follower_id) %>
+    <li>
+      <%= link_to "#{follower_user.first_name} #{follower_user.last_name}", user_path(follower_user) %>
+    </li>
+  <% end %>
+</ul>

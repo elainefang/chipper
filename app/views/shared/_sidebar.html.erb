@@ -1,0 +1,5 @@
+
+<% if user_signed_in? %>
+  <%= render "shared/user_info" %>
+  <%= render "shared/followers_list", user: current_user %>
+<% end %>

@@ -12,4 +12,8 @@ class User < ApplicationRecord
   validates_presence_of :first_name
   validates_presence_of :last_name
   validates_presence_of :age_over_thirteen
+
+  def followers
+    Follower.where(user_id: self.id)
+  end
 end
