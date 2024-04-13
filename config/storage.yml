@@ -11,9 +11,8 @@ amazon:
   service: S3
   access_key_id: <%= ENV['S3_ACCESS_KEY'] %>
   secret_access_key: <%= ENV['S3_SECRET_ACCESS_KEY'] %>
-  secret_access_key: rZHEfpQdP0GwVBNA7TZaPES09K0ef50XO32jdu3c
   region: us-east-1
-  bucket: <%= ENV['S3_BUCKET'] %>
+  bucket: <%= ENV['S3_BUCKET'] %>-<%= Rails.env %>
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:

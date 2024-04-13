@@ -4,7 +4,7 @@
   <%= form_for(current_user, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <%= image_tag url_for(current_user.avatar), class: "avatar" if current_user.avatar.attached? %>
+    <%= image_tag url_for(current_user.avatar), class: "avatar img-fluid" if current_user.avatar.attached? %>
 
     <div class="field">
       <%= f.label :avatar %><br />
