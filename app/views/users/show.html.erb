@@ -2,7 +2,13 @@
   <div class="row">
     <div class="col col-md-6">
       <h1><%= @user.first_name %> <%= @user.last_name %>'s Profile</h1>
-      <%= image_tag url_for(@user.avatar), class: "avatar img-fluid" if @user.avatar.attached? %>
+      <% if @user.avatar.attached? %>
+        <%= image_tag url_for(@user.avatar), class: "avatar img-fluid" %>
+      <% else %>
+        <%= image_tag "default-photo", class: "avatar img-fluid" %>
+      <% end %>
+      
+      <h2>Followers: <%= @user.followers.count %></h2>
       <% if user_signed_in? && current_user != @user %>
         <% if current_user.following?(@user) %>
           <%= form_with(url: user_follower_path(user_id: @user.id, id: current_user.id), method: :delete) do |form| %>

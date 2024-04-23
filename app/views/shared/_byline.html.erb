@@ -1,6 +1,10 @@
 <div class="byline">
-  <%= image_tag url_for(user.avatar), class: "avatar float-start" if user.avatar.attached? %>
-  
+  <% if user.avatar.attached? %>
+    <%= image_tag url_for(user.avatar), alt: "User Avatar", class: "avatar float-start" %>
+  <% else %>
+    <%= image_tag "default-photo", alt: "User Avatar", class: "avatar float-start" %>
+  <% end %>
+
   <div class="poster">
     <%= link_to user_path(user) do %>
       <div>

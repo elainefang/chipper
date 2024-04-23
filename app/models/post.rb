@@ -16,11 +16,11 @@ class Post < ApplicationRecord
 				end
 
 				acceptable_types = ["image/jpeg", "image/png"]
-				unless acceptable_types.include?(main_image.content_type)
+				unless acceptable_types.include?(image.content_type)
 					errors.add(:images, "must be a JPEG or PNG")
 				end
 			end
-			unless images.size > 10
+			unless images.size < 10
 				errors.add(:images, 'too many images')
 			end
     end

@@ -7,7 +7,11 @@
       <% follower_user = User.find(follower.follower_id) %>
       <li>
         <div class="follower">
-          <%= image_tag url_for(follower_user.avatar), class: "avatar float-start" if follower_user.avatar.attached? %>
+          <% if follower_user.avatar.attached? %>
+            <%= image_tag url_for(follower_user.avatar), class: "avatar float-start" %>
+          <% else %>
+            <%= image_tag "default-photo", class: "avatar float-start" %>
+          <% end %>
           <%= link_to "#{follower_user.first_name} #{follower_user.last_name}", user_path(follower_user), class: "follower-name" %>
         </div>
       </li>
