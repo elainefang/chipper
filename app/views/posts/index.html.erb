@@ -1,6 +1,6 @@
 <div class="container opaque">
   <div class="row">
-    <div class="col col-md-9">
+    <div class="col-12 col-md-9">
       <h1>All Posts</h1>
       <hr />
       <% @posts.each do |post| %>
@@ -13,7 +13,7 @@
       <% end %>
       <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
     </div>
-    <div class="col col-md-3">
+    <div class="col-12 col-md-3">
       <%= render "shared/sidebar" %>
     </div>
   </div>

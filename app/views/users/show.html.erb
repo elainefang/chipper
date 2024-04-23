@@ -1,13 +1,13 @@
 <div class="container opaque profile">
   <div class="row">
-    <div class="col col-md-6">
+    <div class="col-12 col-md-6">
       <h1><%= @user.first_name %> <%= @user.last_name %>'s Profile</h1>
       <% if @user.avatar.attached? %>
         <%= image_tag url_for(@user.avatar), class: "avatar img-fluid" %>
       <% else %>
         <%= image_tag "default-photo", class: "avatar img-fluid" %>
       <% end %>
-      
+
       <h2>Followers: <%= @user.followers.count %></h2>
       <% if user_signed_in? && current_user != @user %>
         <% if current_user.following?(@user) %>
@@ -33,7 +33,7 @@
         <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
       <% end %>
     </div>
-    <div class="col col-md-3">
+    <div class="col-12 col-md-3">
       <%= render "shared/followers_list", user: @user %>
     </div>
 </div>
